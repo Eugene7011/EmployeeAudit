@@ -120,9 +120,13 @@ public class EmployeeService {
         Employee[] newEmployees = new Employee[employees.length - 1];
 
         for (int i = 0; i < newEmployees.length; i++) {
-            System.out.println("id " + employee.id + ", name " + employee.name +", age" + employee.age +
-                    ", salary " + employee.salary + ", gender " + employee.gender +
-                    ", fixedBugs " + employee.fixedBugs + ", defaultBugRate " + employee.defaultBugRate);
+            newEmployees[i] = employees[i];
+        }
+
+        for (Employee newEmployee : newEmployees) {
+            System.out.println("id " + newEmployee.id + ", name " + newEmployee.name +", age" + newEmployee.age +
+                    ", salary " + newEmployee.salary + ", gender " + newEmployee.gender +
+                    ", fixedBugs " + newEmployee.fixedBugs + ", defaultBugRate " + newEmployee.defaultBugRate);
         }
 
         return employee;

@@ -54,7 +54,7 @@ public class EmployeeServiceTest {
 
         System.out.println();
 
-        employeeService.remove(23);
+        employeeService.remove(12);
 
         System.out.println();
 

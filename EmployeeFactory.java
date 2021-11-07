@@ -27,7 +27,7 @@ public class EmployeeFactory {
             generatedEmployee.gender = "Female";
         }
         generatedEmployee.fixedBugs = 1 + random.nextInt(500);
-        generatedEmployee.fixedBugs = 1 + random.nextInt(200);
+        generatedEmployee.defaultBugRate= 1 + random.nextInt(200);
 
         String[] namesMen = {"Edward", "Tony", "James", "Anton", "Tolik",
                 "Oleg", "Denis", "Stas", "Max", "Dima"};
@@ -38,9 +38,8 @@ public class EmployeeFactory {
             generatedEmployee.name = namesMen[random.nextInt(namesMen.length)];
         }
         else{
-            generatedEmployee.name = namesWomen[random.nextInt(namesMen.length)];
+            generatedEmployee.name = namesWomen[random.nextInt(namesWomen.length)];
         }
-
         return generatedEmployee;
     }
 
