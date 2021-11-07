@@ -1,5 +1,5 @@
 package com.company;
-//import java.util.*;
+import java.util.*;
 
 public class EmployeeService {
 
@@ -110,8 +110,18 @@ public class EmployeeService {
     }
 
     public Employee remove(long id){
+        getById(id);
+        long removedId = id;
         Employee employee = getById(id);
-        int removedIndex = (int) employee.id;
+        int removedIndex = 0;
+
+        for (int i = 0; i < employees.length; i++) {
+            long j = employees[i].id;
+            if (j == removedId){
+                removedIndex = i;
+            }
+        }
+
         //Employee[] employees = new Employee[];
 
         for (int i = removedIndex; i < employees.length - 1; i++) {
@@ -123,11 +133,11 @@ public class EmployeeService {
             newEmployees[i] = employees[i];
         }
 
-        for (Employee newEmployee : newEmployees) {
-            System.out.println("id " + newEmployee.id + ", name " + newEmployee.name +", age" + newEmployee.age +
-                    ", salary " + newEmployee.salary + ", gender " + newEmployee.gender +
-                    ", fixedBugs " + newEmployee.fixedBugs + ", defaultBugRate " + newEmployee.defaultBugRate);
-        }
+//        for (Employee newEmployee : newEmployees) {
+//            System.out.println("id " + newEmployee.id + ", name " + newEmployee.name +", age" + newEmployee.age +
+//                    ", salary " + newEmployee.salary + ", gender " + newEmployee.gender +
+//                    ", fixedBugs " + newEmployee.fixedBugs + ", defaultBugRate " + newEmployee.defaultBugRate);
+//        }
 
         return employee;
     }

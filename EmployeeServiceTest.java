@@ -49,12 +49,16 @@ public class EmployeeServiceTest {
         }
         System.out.println();
 
+
         Employee testEmployee = new Employee(23, "Rita", 46, 3400.00, "Male", 32, 10);
         employeeService.print(employeeService.edit(testEmployee));
 
         System.out.println();
 
-        employeeService.remove(12);
+
+        employeeService.getById(11);
+        employeeService.remove(11);
+        employeeService.getById(11);
 
         System.out.println();
 
